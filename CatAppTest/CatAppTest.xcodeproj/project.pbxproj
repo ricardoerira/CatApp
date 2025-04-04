@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		411921312DA069A20072B428 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411921302DA069A20072B428 /* LottieView.swift */; };
 		4181C3832DA0306A00DCA094 /* CatAppTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181C3822DA0306A00DCA094 /* CatAppTestApp.swift */; };
 		4181C3852DA0306A00DCA094 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181C3842DA0306A00DCA094 /* ContentView.swift */; };
 		4181C3872DA0306C00DCA094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4181C3862DA0306C00DCA094 /* Assets.xcassets */; };
@@ -16,8 +17,14 @@
 		4181C3A02DA0306D00DCA094 /* CatAppTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181C39F2DA0306D00DCA094 /* CatAppTestUITestsLaunchTests.swift */; };
 		4181C3B22DA0319B00DCA094 /* CatBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181C3B12DA0319B00DCA094 /* CatBreed.swift */; };
 		4181C3B42DA031B600DCA094 /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181C3B32DA031B500DCA094 /* FavoriteManager.swift */; };
-		4181C3B62DA031E600DCA094 /* CatAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181C3B52DA031E600DCA094 /* CatAPIService.swift */; };
+		4181C3B62DA031E600DCA094 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181C3B52DA031E600DCA094 /* APIService.swift */; };
 		4181C3B82DA0321700DCA094 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181C3B72DA0321700DCA094 /* UserDefaultsKeys.swift */; };
+		4181C3BA2DA034A500DCA094 /* CatBreedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181C3B92DA034A500DCA094 /* CatBreedViewModel.swift */; };
+		4181C3BC2DA034E900DCA094 /* CatBreedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181C3BB2DA034E900DCA094 /* CatBreedListView.swift */; };
+		4181C3BE2DA0352600DCA094 /* BreedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181C3BD2DA0352600DCA094 /* BreedCardView.swift */; };
+		4181C3C02DA0359400DCA094 /* CatBreedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181C3BF2DA0359400DCA094 /* CatBreedDetailView.swift */; };
+		4181C3C22DA04F3500DCA094 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181C3C12DA04F3500DCA094 /* SplashScreen.swift */; };
+		4181C3C62DA0506700DCA094 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4181C3C52DA0506700DCA094 /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		411921302DA069A20072B428 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		4181C37F2DA0306A00DCA094 /* CatAppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatAppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4181C3822DA0306A00DCA094 /* CatAppTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAppTestApp.swift; sourceTree = "<group>"; };
 		4181C3842DA0306A00DCA094 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,8 +58,13 @@
 		4181C39F2DA0306D00DCA094 /* CatAppTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAppTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4181C3B12DA0319B00DCA094 /* CatBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreed.swift; sourceTree = "<group>"; };
 		4181C3B32DA031B500DCA094 /* FavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
-		4181C3B52DA031E600DCA094 /* CatAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPIService.swift; sourceTree = "<group>"; };
+		4181C3B52DA031E600DCA094 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		4181C3B72DA0321700DCA094 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		4181C3B92DA034A500DCA094 /* CatBreedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedViewModel.swift; sourceTree = "<group>"; };
+		4181C3BB2DA034E900DCA094 /* CatBreedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedListView.swift; sourceTree = "<group>"; };
+		4181C3BD2DA0352600DCA094 /* BreedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCardView.swift; sourceTree = "<group>"; };
+		4181C3BF2DA0359400DCA094 /* CatBreedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedDetailView.swift; sourceTree = "<group>"; };
+		4181C3C12DA04F3500DCA094 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4181C3C62DA0506700DCA094 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4119212F2DA069980072B428 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				411921302DA069A20072B428 /* LottieView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		4181C3762DA0306A00DCA094 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +124,7 @@
 		4181C3812DA0306A00DCA094 /* CatAppTest */ = {
 			isa = PBXGroup;
 			children = (
+				4119212F2DA069980072B428 /* Base */,
 				4181C3B02DA0312C00DCA094 /* Utils */,
 				4181C3AF2DA0311F00DCA094 /* Networking */,
 				4181C3AE2DA0311700DCA094 /* Views */,
@@ -152,6 +175,7 @@
 		4181C3AD2DA0310D00DCA094 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4181C3B92DA034A500DCA094 /* CatBreedViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -159,6 +183,10 @@
 		4181C3AE2DA0311700DCA094 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4181C3BB2DA034E900DCA094 /* CatBreedListView.swift */,
+				4181C3BD2DA0352600DCA094 /* BreedCardView.swift */,
+				4181C3BF2DA0359400DCA094 /* CatBreedDetailView.swift */,
+				4181C3C12DA04F3500DCA094 /* SplashScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,7 +194,7 @@
 		4181C3AF2DA0311F00DCA094 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				4181C3B52DA031E600DCA094 /* CatAPIService.swift */,
+				4181C3B52DA031E600DCA094 /* APIService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -195,6 +223,9 @@
 			dependencies = (
 			);
 			name = CatAppTest;
+			packageProductDependencies = (
+				4181C3C52DA0506700DCA094 /* Lottie */,
+			);
 			productName = CatAppTest;
 			productReference = 4181C37F2DA0306A00DCA094 /* CatAppTest.app */;
 			productType = "com.apple.product-type.application";
@@ -267,6 +298,9 @@
 				Base,
 			);
 			mainGroup = 4181C3762DA0306A00DCA094;
+			packageReferences = (
+				4181C3C42DA0506700DCA094 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 4181C3802DA0306A00DCA094 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -309,12 +343,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4181C3BA2DA034A500DCA094 /* CatBreedViewModel.swift in Sources */,
 				4181C3B22DA0319B00DCA094 /* CatBreed.swift in Sources */,
+				4181C3BC2DA034E900DCA094 /* CatBreedListView.swift in Sources */,
 				4181C3852DA0306A00DCA094 /* ContentView.swift in Sources */,
 				4181C3832DA0306A00DCA094 /* CatAppTestApp.swift in Sources */,
-				4181C3B62DA031E600DCA094 /* CatAPIService.swift in Sources */,
+				4181C3C02DA0359400DCA094 /* CatBreedDetailView.swift in Sources */,
+				4181C3C22DA04F3500DCA094 /* SplashScreen.swift in Sources */,
+				4181C3B62DA031E600DCA094 /* APIService.swift in Sources */,
+				4181C3BE2DA0352600DCA094 /* BreedCardView.swift in Sources */,
 				4181C3B82DA0321700DCA094 /* UserDefaultsKeys.swift in Sources */,
 				4181C3B42DA031B600DCA094 /* FavoriteManager.swift in Sources */,
+				411921312DA069A20072B428 /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +673,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4181C3C42DA0506700DCA094 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4181C3C52DA0506700DCA094 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4181C3C42DA0506700DCA094 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4181C3772DA0306A00DCA094 /* Project object */;
 }
