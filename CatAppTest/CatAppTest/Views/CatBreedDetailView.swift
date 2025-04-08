@@ -5,48 +5,64 @@
 //  Created by andres on 4/04/25.
 //
 
-import Foundation
 import SwiftUI
 
 struct CatBreedDetailView: View {
-    let breed: CatBreed
+    let breed: CatBreedModel
+    let image: Image?
 
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
-        ScrollView {
-//            VStack(alignment: .leading, spacing: 16) {
-//                if let url = breed.image?.url, let imageURL = URL(string: url) {
-//                    AsyncImage(url: imageURL) { image in
-//                        image.resizable()
-//                    } placeholder: {
-//                        ProgressView()
-//                    }
-//                    .frame(height: 200)
-//                    .clipShape(RoundedRectangle(cornerRadius: 12))
-//                }
-//
-//                Text(breed.name)
-//                    .font(.largeTitle)
-//                    .bold()
-//
-//                if let description = breed.description {
-//                    Text(description)
-//                }
-//
-//                if let origin = breed.origin {
-//                    Text("Origin: \(origin)")
-//                }
-//
-//                if let lifeSpan = breed.life_span {
-//                    Text("Life span: \(lifeSpan) years")
-//                }
-//
-//                if let temperament = breed.temperament {
-//                    Text("Temperament: \(temperament)")
-//                }
-//            }
-//            .padding()
+        ZStack {
+            if let image = image {
+                image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: UIScreen.main.bounds.width)
+                    .ignoresSafeArea()
+                    .blur(radius: 10)
+           
+            }
+            Rectangle()
+                .fill(Color.white.opacity(0.2))
+            BlurView(style: colorScheme == .dark ? .systemThinMaterialDark : .systemThinMaterialLight)
+                .ignoresSafeArea()
+            VStack(spacing: 16) {
+                if let image = image {
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .shadow(radius: 5)
+                        .frame(height: 350)
+                        .padding()
+                }
+                
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("📜 Description:")
+                            .font(.headline)
+                        Text(breed.description)
+                            .font(.body)
+                            .multilineTextAlignment(.leading)
+                        HStack {
+                            Text(breed.flagEmoji).font(.largeTitle)
+                            Text(breed.origin)
+                        }
+                        
+                        Text("⭐ Intelligence: \(breed.intelligence)")
+                        Text("❤️ Adaptability: \(breed.adaptability)")
+                       
+                    }
+                    
+                    .padding()
+                }
+                .padding(.horizontal)
+            }
         }
         .navigationTitle(breed.name)
-        .navigationBarTitleDisplayMode(.inline)
+        .foregroundColor(colorScheme == .dark ? .white : .black)
+        .toolbarBackground(.hidden, for: .navigationBar)
     }
 }

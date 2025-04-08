@@ -18,7 +18,7 @@ struct SplashScreen: View {
     var body: some View {
         ZStack {
             if isActive {
-                CatBreedListView()
+                CatBreedListView(viewModel:  AppFactory.shared.makeBreedListViewModel())
                 // Navigate to the main content
             } else {
                 VStack {

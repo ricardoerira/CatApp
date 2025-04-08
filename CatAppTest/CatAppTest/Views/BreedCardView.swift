@@ -7,9 +7,11 @@
 
 import Foundation
 import SwiftUI
-struct BreedCardView: View {
-    let breed: CatBreed
 
+struct BreedCardView: View {
+    let breed: CatBreedModel
+    @State var downloadedImage: Image?
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -18,25 +20,40 @@ struct BreedCardView: View {
                     .foregroundColor(.white)
                 
                 Spacer()
-                
-                Text("Más...")
-                    .font(.headline)
-                    .foregroundColor(.white)
+ 
+                NavigationLink(destination: CatBreedDetailView(breed: breed, image: downloadedImage)) {
+                    Text("Más...")
+                        .font(.headline)
+                        .padding(8)
+                        .foregroundColor(.white)
+                }
             }
 
-            // Image
-            AsyncImage(url: breed.imageURL) { image in
-                image.resizable()
-            } placeholder: {
-                Color.gray.opacity(0.3)
+            AsyncImage(url: breed.imageURL) { phase in
+                switch phase {
+                case .success(let image):
+                    image.resizable()
+                        .scaledToFill()
+                        .frame(height: 150)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .clipped()
+                        .onAppear { downloadedImage = image } 
+                    
+                case .failure:
+                    ProgressView().progressViewStyle(.circular).foregroundColor(.white)
+
+                default:
+                    ProgressView().progressViewStyle(.circular).foregroundColor(.white)
+                }
             }
+
             .scaledToFit()
             .frame(height: 150)
             .clipShape(RoundedRectangle(cornerRadius: 10))
 
             // Info Row with Flag and Intelligence
             HStack {
-                Text("\(flagEmoji(for: breed.countryCode))").font(.largeTitle)
+                Text(breed.flagEmoji).font(.largeTitle)
                 Text( breed.countryCode).font(.headline)
                 Spacer()
                 Text("🧠 \(breed.intelligence)/5")
@@ -60,11 +77,5 @@ struct BreedCardView: View {
     }
 
     // Function to get country flag emoji from country code
-    func flagEmoji(for countryCode: String) -> String {
-        countryCode.uppercased().unicodeScalars.compactMap {
-            UnicodeScalar(127397 + $0.value)
-        }
-        .map { String($0) }
-        .joined()
-    }
+   
 }
