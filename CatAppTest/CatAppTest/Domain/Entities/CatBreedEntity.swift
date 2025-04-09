@@ -22,12 +22,5 @@ class CatBreedEntity: NSManagedObject {
     @NSManaged public var temperament: String?
     @NSManaged public var intelligence: Int16
     @NSManaged public var adaptability: Int16
-    @NSManaged public var referenceImageId: String?
-    
-
-
-    
-
-
-    
+    @NSManaged public var referenceImageId: String? 
 }

@@ -191,7 +191,6 @@
 		41652A132DA5618800213163 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				41652A032DA482BA00213163 /* CatBreedEntity.swift */,
 				41652A092DA4998400213163 /* PersistenceController.swift */,
 				416529F22DA47CD400213163 /* OfflineService.swift */,
 			);
@@ -211,6 +210,7 @@
 		41652A162DA5649B00213163 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				41652A032DA482BA00213163 /* CatBreedEntity.swift */,
 				4181C3B12DA0319B00DCA094 /* CatBreed.swift */,
 			);
 			path = Entities;
@@ -222,6 +222,15 @@
 				41652A182DA564E700213163 /* FetchCatBreedsUseCase.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		41652A5F2DA5726C00213163 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				4181C3AE2DA0311700DCA094 /* Views */,
+				4181C3AD2DA0310D00DCA094 /* ViewModels */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		4181C3762DA0306A00DCA094 = {
@@ -246,6 +255,7 @@
 		4181C3812DA0306A00DCA094 /* CatAppTest */ = {
 			isa = PBXGroup;
 			children = (
+				41652A5F2DA5726C00213163 /* Presentation */,
 				41652A142DA5646B00213163 /* Domain */,
 				41652A112DA5615800213163 /* Data */,
 				416529EF2DA47B8C00213163 /* Infraestructure */,
@@ -253,8 +263,6 @@
 				41CD2DAF2DA18FA90008BB0C /* Configuration */,
 				4119212F2DA069980072B428 /* Base */,
 				4181C3B02DA0312C00DCA094 /* Utils */,
-				4181C3AE2DA0311700DCA094 /* Views */,
-				4181C3AD2DA0310D00DCA094 /* ViewModels */,
 				4181C3822DA0306A00DCA094 /* CatAppTestApp.swift */,
 				4181C3862DA0306C00DCA094 /* Assets.xcassets */,
 				4181C3882DA0306C00DCA094 /* Preview Content */,
