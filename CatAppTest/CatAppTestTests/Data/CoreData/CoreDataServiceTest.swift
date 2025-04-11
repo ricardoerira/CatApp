@@ -11,7 +11,7 @@ import Combine
 import CoreData
 @testable import CatAppTest
 
-final class OfflineServiceTests: XCTestCase {
+final class CoreDataServiceTest: XCTestCase {
     var offlineService: CoreDataService!
     var persistentContainer: NSPersistentContainer!
     var cancellables: Set<AnyCancellable>!
