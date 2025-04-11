@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  CatAppTest
+
+  Created by Wilson Ricardo Erira Correa on 11/04/25.
+  
+*/
+
+/* APIError */
+"error_bad_request" = "Bad Request (400).";
+"error_unauthorized" = "Unauthorized. Please check your API key.";
+"error_forbidden" = "Access forbidden.";
+"error_not_found" = "Resource not found.";
+"error_server" = "Server error (%d).";
+"error_unknown" = "Unexpected error (%d).";
+"error_invalid_response" = "Invalid response from server.";
+
+/* ServiceError */
+"error_unsupported_type" = "The requested type is not supported.";
+"error_cast_failed" = "Failed to cast the fetched data to the expected type.";
+"error_core_data" = "Core Data fetch failed with error: %@";
+"error_no_data" = "No data available in local storage. Please connect to internet to create data.";
+
+/* View */
+"loading_breeds" = "Loading breeds...";
+"oops" = "Oops!";
+"retry" = "Retry";
+"generic_error" = "Something went wrong.";
+"search_placeholder" = "Search breeds...";
+"description_label" = "Description";
+"more_button" = "More...";
+"intelligence_label" = "🧠 Intelligence: %d";
+"adaptability_label" = "❤️ Adaptability: %d";

@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol FetchCatBreedsUseCaseProtocol {
-    func execute() -> AnyPublisher<[CatBreed], Error>
+    func execute() -> AnyPublisher<[CatBreed], ServiceError>
 }

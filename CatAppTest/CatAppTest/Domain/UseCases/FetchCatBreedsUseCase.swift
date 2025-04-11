@@ -15,7 +15,7 @@ final class FetchCatBreedsUseCase: FetchCatBreedsUseCaseProtocol {
         self.repository = repository
     }
 
-    func execute() -> AnyPublisher<[CatBreed], Error> {
+    func execute() -> AnyPublisher<[CatBreed], ServiceError> {
         repository.getCatBreeds()
     }
 }

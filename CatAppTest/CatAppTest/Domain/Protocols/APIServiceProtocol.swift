@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol APIServiceProtocol {
-    func fetch<T: Decodable>(_ type: T.Type, from endpoint: String) -> AnyPublisher<T, Error>
+    func fetch<T: Decodable>(_ type: T.Type, from endpoint: String) -> AnyPublisher<T, ServiceError>
 }

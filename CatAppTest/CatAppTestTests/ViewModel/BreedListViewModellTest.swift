@@ -51,17 +51,17 @@ final class CatBreedListViewModelTests: XCTestCase {
     }
 
     func testFetchBreeds_FailureResponse() {
-        let expectedError = URLError(.notConnectedToInternet)
+        let expectedError = ServiceError.invalidResponse
         mockUseCase.result = .failure(expectedError)
         viewModel.fetchBreeds()
         let expectation = self.expectation(description: "Wait for error state")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             if case .failed(let error) = self.viewModel.state {
-                XCTAssertEqual((error as? URLError)?.code, .notConnectedToInternet)
+                XCTAssertEqual(error.errorDescription,  ServiceError.invalidResponse.errorDescription)
             } else {
                 XCTFail("Expected failed state")
             }
-            XCTAssertEqual(self.viewModel.errorMessage, expectedError.localizedDescription)
+            XCTAssertEqual(self.viewModel.errorMessage, expectedError.errorDescription)
             expectation.fulfill()
         }
 
@@ -69,7 +69,6 @@ final class CatBreedListViewModelTests: XCTestCase {
     }
 
     func testSearchFiltersBreeds() {
-        // Given
         mockUseCase.result = .success(breeds)
         viewModel.fetchBreeds()
 
@@ -89,23 +88,16 @@ final class CatBreedListViewModelTests: XCTestCase {
     }
     
     func testSearchFiltersBreeds_NoMatch() {
-        // Given
         let breeds = CatBreed.preview()
-
         mockUseCase.result = .success(breeds)
-
-        // When
         viewModel.fetchBreeds()
 
         let expectation = self.expectation(description: "Search yields no results")
-
-        // Simulate search with a term that doesn't match
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.viewModel.searchText = "test"
         }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            // Then
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             XCTAssertTrue(self.viewModel.filteredBreeds.isEmpty, "Expected no breeds to match search")
             expectation.fulfill()
         }

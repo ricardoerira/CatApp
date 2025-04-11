@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol CatBreedRepositoryProtocol {
-    func getCatBreeds() -> AnyPublisher<[CatBreed], Error>
+    func getCatBreeds() -> AnyPublisher<[CatBreed], ServiceError>
 }

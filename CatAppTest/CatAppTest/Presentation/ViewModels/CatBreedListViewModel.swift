@@ -11,7 +11,7 @@ enum Loadable<T> {
     case idle
     case loading
     case loaded(T)
-    case failed(Error)
+    case failed(ServiceError)
 }
 
 class CatBreedListViewModel: ObservableObject {
@@ -41,7 +41,7 @@ class CatBreedListViewModel: ObservableObject {
                 switch completion {
                 case .failure(let error):
                     self?.state = .failed(error)
-                    self?.errorMessage = error.localizedDescription
+                    self?.errorMessage = error.errorDescription
                 case .finished:
                     break
                 }

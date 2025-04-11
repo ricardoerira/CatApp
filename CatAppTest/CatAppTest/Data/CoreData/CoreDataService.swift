@@ -8,36 +8,36 @@ import Foundation
 import CoreData
 import Combine
 
-final class OfflineService: APIServiceOfflineProtocol {
-    private let persistentContainer: NSPersistentContainer
+final class CoreDataService: CoreDataServiceProtocol {
+     let persistentContainer: NSPersistentContainer
     
     init(persistentContainer: NSPersistentContainer) {
         self.persistentContainer = persistentContainer
     }
     
-    func fetch<T: Decodable>(_ type: T.Type) -> AnyPublisher<T, Error> {
+    func fetch<T: Decodable>(_ type: T.Type) -> AnyPublisher<T, ServiceError> {
         guard T.self == [CatBreed].self else {
-            return Fail(error: OfflineServiceError.unsupportedType).eraseToAnyPublisher()
+            return Fail(error: ServiceError.unsupportedType).eraseToAnyPublisher()
         }
 
         let request: NSFetchRequest<CatBreedEntity> = CatBreedEntity.fetchRequest()
         let context = persistentContainer.viewContext
 
-        return Future<T, Error> { promise in
+        return Future<T, ServiceError> { promise in
             do {
                 let entities = try context.fetch(request)
                 guard !entities.isEmpty else {
-                    promise(.failure(OfflineServiceError.noDataAvailable))
+                    promise(.failure(ServiceError.noDataAvailable))
                     return
                 }
                 let breeds = entities.map { CatBreed(from: $0) }
                 if let result = breeds as? T {
                     promise(.success(result))
                 } else {
-                    promise(.failure(OfflineServiceError.typeCastingError))
+                    promise(.failure(ServiceError.typeCastingError))
                 }
             } catch {
-                promise(.failure(OfflineServiceError.coreDataError(error)))
+                promise(.failure(ServiceError.coreDataError(error)))
             }
         }
         .eraseToAnyPublisher()

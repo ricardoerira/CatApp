@@ -350,10 +350,42 @@
             filePath = "CatAppTestTests/ViewModel/BreedListViewModellTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "testSearchFiltersBreeds()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3C2B9FB2-FD0D-4983-8AE2-2BE3671B59F5 - 15275789ffb72e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in CatAppTestTests.CatBreedListViewModelTests.testSearchFiltersBreeds() -&gt; ()"
+                  moduleName = "CatAppTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andres/Documents/Prueba/CatApp/CatAppTest/CatAppTestTests/ViewModel/BreedListViewModellTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "305">
+               </Location>
+               <Location
+                  uuid = "3C2B9FB2-FD0D-4983-8AE2-2BE3671B59F5 - 15275789ffb7285"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in CatAppTestTests.CatBreedListViewModelTests.testSearchFiltersBreeds() -&gt; ()"
+                  moduleName = "CatAppTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andres/Documents/Prueba/CatApp/CatAppTest/CatAppTestTests/ViewModel/BreedListViewModellTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "305">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -654,8 +686,8 @@
             filePath = "CatAppTestTests/Data/CoreData/OfflineServiceTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "testFetch_WhenNoData_ThrowsNoDataError()"
             landmarkType = "7">
          </BreakpointContent>
@@ -670,10 +702,57 @@
             filePath = "CatAppTestTests/Data/CoreData/OfflineServiceTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "testFetch_WhenNoData_ThrowsNoDataError()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E8A348FC-83F0-4A1B-ABA0-B329D3579683 - 2ca0a2d271c65bf3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CatAppTestTests.OfflineServiceTests.testFetch_WithUnsupportedType_ReturnsError() -&gt; ()"
+                  moduleName = "CatAppTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andres/Documents/Prueba/CatApp/CatAppTest/CatAppTestTests/Data/CoreData/OfflineServiceTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "163">
+               </Location>
+               <Location
+                  uuid = "E8A348FC-83F0-4A1B-ABA0-B329D3579683 - 14d307b0cc5c76a3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in CatAppTestTests.OfflineServiceTests.testFetch_WhenNoData_ThrowsNoDataError() -&gt; ()"
+                  moduleName = "CatAppTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andres/Documents/Prueba/CatApp/CatAppTest/CatAppTestTests/Data/CoreData/OfflineServiceTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "314">
+               </Location>
+               <Location
+                  uuid = "E8A348FC-83F0-4A1B-ABA0-B329D3579683 - 1d2fce18fcf60ab1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Combine.Subscribers.Completion&lt;CatAppTest.ServiceError&gt;) -&gt; () in CatAppTestTests.OfflineServiceTests.testFetch_WhenNoData_ThrowsNoDataError() -&gt; ()"
+                  moduleName = "CatAppTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andres/Documents/Prueba/CatApp/CatAppTest/CatAppTestTests/Data/CoreData/OfflineServiceTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "214">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -690,6 +769,485 @@
             endingLineNumber = "27"
             landmarkName = "loaded"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B37261A0-4AEC-4697-B29D-96504B90D166"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTestTests/Data/CoreData/OfflineServiceTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "setUp()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B37261A0-4AEC-4697-B29D-96504B90D166 - f802007cf200e7f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CatAppTestTests.CoreDataEntityTests.makeInMemoryContainer() -&gt; __C.NSPersistentContainer"
+                  moduleName = "CatAppTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andres/Documents/Prueba/CatApp/CatAppTest/CatAppTestTests/Data/CoreData/OfflineServiceTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "416">
+               </Location>
+               <Location
+                  uuid = "B37261A0-4AEC-4697-B29D-96504B90D166 - 13eaa6d9b89dbcd4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSPersistentStoreDescription, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CatAppTestTests.CoreDataEntityTests.makeInMemoryContainer() -&gt; __C.NSPersistentContainer"
+                  moduleName = "CatAppTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andres/Documents/Prueba/CatApp/CatAppTest/CatAppTestTests/Data/CoreData/OfflineServiceTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "109">
+               </Location>
+               <Location
+                  uuid = "B37261A0-4AEC-4697-B29D-96504B90D166 - 1d7812e2c4e855b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CatAppTestTests.CoreDataEntityTests.setUp() -&gt; ()"
+                  moduleName = "CatAppTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andres/Documents/Prueba/CatApp/CatAppTest/CatAppTestTests/Data/CoreData/OfflineServiceTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "156"
+                  endingLineNumber = "156"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A7C42581-8DB5-4C64-9B7C-CFACBB2046AC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTestTests/ViewModel/BreedListViewModellTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "testSearchFiltersBreeds()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A7C42581-8DB5-4C64-9B7C-CFACBB2046AC - 3c1226bff9af2bcc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CatAppTestTests.CatBreedListViewModelTests.testSearchFiltersBreeds() -&gt; ()"
+                  moduleName = "CatAppTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andres/Documents/Prueba/CatApp/CatAppTest/CatAppTestTests/ViewModel/BreedListViewModellTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "1362">
+               </Location>
+               <Location
+                  uuid = "A7C42581-8DB5-4C64-9B7C-CFACBB2046AC - 15275789ffb72a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in CatAppTestTests.CatBreedListViewModelTests.testSearchFiltersBreeds() -&gt; ()"
+                  moduleName = "CatAppTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andres/Documents/Prueba/CatApp/CatAppTest/CatAppTestTests/ViewModel/BreedListViewModellTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "89">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E1CE3661-B6D5-44B3-9265-EE30C379CB9E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTestTests/ViewModel/BreedListViewModellTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "testSearchFiltersBreeds()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5AFEDC2C-DDDD-4495-86BB-AB7599DF0ABE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTest/Data/Remote/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "fetch(_:from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1E3B19F-795E-4F7C-890E-6B0F327581CB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTest/Data/Remote/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "fetch(_:from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "997D1831-45FB-4F39-A492-D559D116695F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTest/Data/Remote/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "fetch(_:from:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "997D1831-45FB-4F39-A492-D559D116695F - e4df3c7aa18aa74c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CatAppTest.APIService.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(_: &#x3c4;_0_0.Type, from: Swift.String) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, CatAppTest.APIError&gt;"
+                  moduleName = "CatAppTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andres/Documents/Prueba/CatApp/CatAppTest/CatAppTest/Data/Remote/APIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "1734">
+               </Location>
+               <Location
+                  uuid = "997D1831-45FB-4F39-A492-D559D116695F - fb572eb3a0195a4f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((data: Foundation.Data, response: __C.NSURLResponse)) throws -&gt; Foundation.Data in CatAppTest.APIService.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(_: &#x3c4;_0_0.Type, from: Swift.String) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, CatAppTest.APIError&gt;"
+                  moduleName = "CatAppTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andres/Documents/Prueba/CatApp/CatAppTest/CatAppTest/Data/Remote/APIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "117">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3672FE03-B7D2-4B7E-8DE5-137E131AF53D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTest/Data/Remote/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "341E808D-A293-44B9-AFE3-B77D11D2E46E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTest/Data/Remote/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "40AF796B-1685-41DA-8628-C2A7BCA15A29"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTest/Data/Remote/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "fetch(_:from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24838F03-05FD-4697-AAF7-F715C9F89536"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTest/Data/Remote/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "297DF6D9-F8AE-4020-990E-42EAF13F5C8B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTest/Presentation/ViewModels/CatBreedListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "fetchBreeds()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E78B620A-A4F7-4F09-A764-D4F3959FB254"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTestTests/ViewModel/BreedListViewModellTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "testFetchBreeds_FailureResponse()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B322CAD0-94E8-4B66-9C0E-0A6C020A265A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTestTests/ViewModel/BreedListViewModellTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "testFetchBreeds_FailureResponse()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A1EFCBD2-1947-4EAC-95FD-2DCEE2909299"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTestTests/ViewModel/BreedListViewModellTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "testFetchBreeds_FailureResponse()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F60F6F0A-14C3-4AA5-8D80-6AB6B9E3D6A3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTestTests/ViewModel/BreedListViewModellTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "testFetchBreeds_FailureResponse()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5AECFE2-C338-46BD-AA47-E2800C6921D3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTestTests/Data/Remote/APIServiceTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "testFetchBreeds_errorStatus()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "086522B0-EEFB-4BFE-B434-E1729356B618"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTestTests/Data/Remote/APIServiceTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "testFetchBreeds_success()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "086522B0-EEFB-4BFE-B434-E1729356B618 - 36051af10599be65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Combine.Subscribers.Completion&lt;CatAppTest.ServiceError&gt;) -&gt; () in CatAppTestTests.APIServiceTests.testFetchBreeds_success() -&gt; ()"
+                  moduleName = "CatAppTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andres/Documents/Prueba/CatApp/CatAppTest/CatAppTestTests/Data/Remote/APIServiceTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "89">
+               </Location>
+               <Location
+                  uuid = "086522B0-EEFB-4BFE-B434-E1729356B618 - 36051af10599be65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Combine.Subscribers.Completion&lt;CatAppTest.ServiceError&gt;) -&gt; () in CatAppTestTests.APIServiceTests.testFetchBreeds_success() -&gt; ()"
+                  moduleName = "CatAppTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andres/Documents/Prueba/CatApp/CatAppTest/CatAppTestTests/Data/Remote/APIServiceTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "120">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D941B966-7893-4592-8665-FA59D935040B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTestTests/Data/Remote/APIServiceTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "testFetchBreeds_success()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7BAB8823-EFC9-43AE-AA8B-D0B89A57EECA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatAppTestTests/Data/Remote/APIServiceTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "testFetchBreeds_errorStatus()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7BAB8823-EFC9-43AE-AA8B-D0B89A57EECA - 3b6a39bbc8c0bcce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Combine.Subscribers.Completion&lt;CatAppTest.ServiceError&gt;) -&gt; () in CatAppTestTests.APIServiceTests.testFetchBreeds_errorStatus() -&gt; ()"
+                  moduleName = "CatAppTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andres/Documents/Prueba/CatApp/CatAppTest/CatAppTestTests/Data/Remote/APIServiceTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "99">
+               </Location>
+               <Location
+                  uuid = "7BAB8823-EFC9-43AE-AA8B-D0B89A57EECA - 3b6a39bbc8c0bcce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Combine.Subscribers.Completion&lt;CatAppTest.ServiceError&gt;) -&gt; () in CatAppTestTests.APIServiceTests.testFetchBreeds_errorStatus() -&gt; ()"
+                  moduleName = "CatAppTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andres/Documents/Prueba/CatApp/CatAppTest/CatAppTestTests/Data/Remote/APIServiceTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "130">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -12,14 +12,29 @@ import CoreData
 @testable import CatAppTest
 
 final class OfflineServiceTests: XCTestCase {
-    var offlineService: OfflineService!
+    var offlineService: CoreDataService!
     var persistentContainer: NSPersistentContainer!
     var cancellables: Set<AnyCancellable>!
 
     override func setUp() {
         super.setUp()
         cancellables = []
-        offlineService = OfflineService(persistentContainer: CoreDataEntityTests().container)
+        offlineService = CoreDataService(persistentContainer: makeInMemoryContainer())
+    }
+    
+    
+    func makeInMemoryContainer() -> NSPersistentContainer {
+        let container = NSPersistentContainer(name: "CatAppTestModel") // Match your .xcdatamodeld name
+
+        let description = NSPersistentStoreDescription()
+        description.type = NSInMemoryStoreType
+        container.persistentStoreDescriptions = [description]
+
+        container.loadPersistentStores { description, error in
+            XCTAssertNil(error, "Failed to load in-memory store: \(error!)")
+        }
+
+        return container
     }
 
     override func tearDown() {
@@ -30,10 +45,7 @@ final class OfflineServiceTests: XCTestCase {
     }
     
 
-
-
     func testFetch_WhenDataExists_ReturnsCatBreeds() {
-        // Given
         insertMockBreeds(count: 2)
 
         let expectation = expectation(description: "Should fetch cat breeds")
@@ -60,7 +72,7 @@ final class OfflineServiceTests: XCTestCase {
         offlineService.fetch([CatBreed].self)
             .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion,
-                   case OfflineServiceError.noDataAvailable = error {
+                   case ServiceError.noDataAvailable = error {
                     expectation.fulfill()
                 } else {
                     XCTFail("Expected noDataAvailable error")
@@ -79,7 +91,7 @@ final class OfflineServiceTests: XCTestCase {
         offlineService.fetch(String.self)
             .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion,
-                   case OfflineServiceError.unsupportedType = error {
+                   case ServiceError.unsupportedType = error {
                     expectation.fulfill()
                 } else {
                     XCTFail("Expected unsupportedType error")
@@ -110,7 +122,7 @@ final class OfflineServiceTests: XCTestCase {
         offlineService.save(item: [existingBreed, newBreed])
 
         // Then
-        let context = persistentContainer.viewContext
+        let context = offlineService.persistentContainer.viewContext
         let request: NSFetchRequest<CatBreedEntity> = CatBreedEntity.fetchRequest()
         let results = try? context.fetch(request)
         XCTAssertEqual(results?.count, 2)
@@ -119,7 +131,7 @@ final class OfflineServiceTests: XCTestCase {
     // MARK: - Helpers
 
     private func insertMockBreeds(count: Int) {
-        let context = persistentContainer.viewContext
+        let context = offlineService.persistentContainer.viewContext
         for i in 0..<count {
             let entity = CatBreedEntity(context: context)
             entity.id = "\(i)"

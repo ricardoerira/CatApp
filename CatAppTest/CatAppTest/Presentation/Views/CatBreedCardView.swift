@@ -42,7 +42,7 @@ struct CatBreedCardView: View {
             Spacer()
             
             NavigationLink(destination: CatBreedDetailView(breed: breed, image: downloadedImage)) {
-                Text("Más...")
+                Text(NSLocalizedString("more_button", comment: ""))
                     .font(.headline)
                     .padding(8)
                     .foregroundColor(.white)

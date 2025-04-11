@@ -10,9 +10,9 @@ import Combine
 @testable import CatAppTest
 
 class MockFetchCatBreedsUseCase: FetchCatBreedsUseCaseProtocol {
-    var result: Result<[CatBreed], Error> = .success([])
+    var result: Result<[CatBreed], ServiceError> = .success([])
 
-    func execute() -> AnyPublisher<[CatBreed], Error> {
+    func execute() -> AnyPublisher<[CatBreed], ServiceError> {
         result.publisher.eraseToAnyPublisher()
     }
 }

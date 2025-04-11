@@ -40,20 +40,20 @@ struct CatBreedListView: View {
 extension CatBreedListView {
     
     private var loadingView: some View {
-        ProgressView("Loading breeds...")
+        ProgressView(NSLocalizedString("loading_breeds", comment: ""))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.ultraThinMaterial)
             .foregroundColor(.white)
     }
 
-    private func errorView(error: Error) -> some View {
+    private func errorView(error: ServiceError) -> some View {
         VStack(spacing: 20) {
             Spacer()
-            Text("Oops!")
+            Text(NSLocalizedString("oops", comment: ""))
                 .font(.largeTitle.bold())
                 .foregroundColor(.white)
 
-            Text("Something went wrong:\n\(error.localizedDescription)")
+            Text(error.errorDescription ?? "")
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
                 .font(.headline)
@@ -62,7 +62,7 @@ extension CatBreedListView {
             Button(action: {
                 viewModel.fetchBreeds()
             }) {
-                Text("Retry")
+                Text(NSLocalizedString("retry", comment: ""))
                     .fontWeight(.semibold)
                     .padding()
                     .frame(maxWidth: 120)
@@ -73,7 +73,8 @@ extension CatBreedListView {
             }
             Spacer()
         }
-        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+
     }
 
     private func loadedBreedsView(filteredBreeds: [CatBreedModel]) -> some View {
@@ -81,7 +82,7 @@ extension CatBreedListView {
             Text("CatApp")
                 .foregroundColor(.white.opacity(0.8))
 
-            TextField("Search breeds...", text: $viewModel.searchText)
+            TextField(NSLocalizedString("search_placeholder", comment: "Search field placeholder"), text: $viewModel.searchText)
                 .padding()
                 .background(Color(.systemGray6))
                 .cornerRadius(10)
@@ -96,26 +97,6 @@ extension CatBreedListView {
                 }
                 .padding(.horizontal)
             }
-        }
-    }
-}
-
-
-
-struct CatBreedListView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            CatBreedListView(viewModel: MockCatBreedListViewModel.loading)
-                .previewDisplayName("Loading State")
-                .preferredColorScheme(.dark)
-
-            CatBreedListView(viewModel: MockCatBreedListViewModel.loaded)
-                .previewDisplayName("Loaded State")
-                .preferredColorScheme(.light)
-
-            CatBreedListView(viewModel: MockCatBreedListViewModel.error)
-                .previewDisplayName("Error State")
-                .preferredColorScheme(.dark)
         }
     }
 }

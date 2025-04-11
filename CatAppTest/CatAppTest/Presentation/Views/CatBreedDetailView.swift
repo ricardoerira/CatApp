@@ -93,7 +93,7 @@ struct CatBreedDetailView: View {
     
     private var infoSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("📜 Description")
+            Text(NSLocalizedString("description_label", comment: ""))
                 .font(.headline)
             Text(breed.description)
                 .font(.body)
@@ -106,8 +106,8 @@ struct CatBreedDetailView: View {
                     .font(.headline)
             }
             
-            Text("🧠 Intelligence: \(breed.intelligence)")
-            Text("❤️ Adaptability: \(breed.adaptability)")
+            Text(" \(NSLocalizedString("intelligence_label", comment: "")) \(breed.intelligence)")
+            Text(" \(NSLocalizedString("adaptability_label", comment: "")) \(breed.adaptability)")
         }
         .padding()
         

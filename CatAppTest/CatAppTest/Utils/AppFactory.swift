@@ -15,7 +15,7 @@ final class AppFactory {
     
     func makeBreedListViewModel() -> CatBreedListViewModel {
         let remoteService = APIService()
-        let offlineService = OfflineService(persistentContainer: PersistenceController.shared.container)
+        let offlineService = CoreDataService(persistentContainer: PersistenceController.shared.container)
         let repository = CatBreedRepository(remoteService: remoteService,
                                             offlineService: offlineService)
         

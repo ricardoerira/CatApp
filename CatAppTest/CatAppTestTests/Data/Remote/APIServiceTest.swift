@@ -112,7 +112,7 @@ final class APIServiceTests: XCTestCase {
         service.fetch([CatBreed].self, from: "/breeds")
             .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion {
-                    XCTAssertTrue(error is APIError)
+                    XCTAssertTrue(error.errorDescription == ServiceError.notFound.errorDescription)
                     expectation.fulfill()
                 }
             }, receiveValue: { _ in

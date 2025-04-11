@@ -10,23 +10,23 @@ import Combine
 
 class CatBreedRepository: CatBreedRepositoryProtocol {
     let remoteService: APIServiceProtocol
-    let offlineService: APIServiceOfflineProtocol
+    let offlineService: CoreDataServiceProtocol
     var cancellables = Set<AnyCancellable>()
     
-    init(remoteService: APIServiceProtocol, offlineService: APIServiceOfflineProtocol) {
+    init(remoteService: APIServiceProtocol, offlineService: CoreDataServiceProtocol) {
         self.remoteService = remoteService
         self.offlineService = offlineService
     }
     
-    func getCatBreeds() -> AnyPublisher<[CatBreed], Error> {
-        remoteService.fetch([CatBreed].self, from: "/breeds")
+    func getCatBreeds() -> AnyPublisher<[CatBreed], ServiceError> {
+        remoteService
+            .fetch([CatBreed].self, from: "/breeds")
             .handleEvents(receiveOutput: { [weak self] breeds in
                 self?.offlineService.save(item: breeds)
             })
-            .catch { error -> AnyPublisher<[CatBreed], Error> in
-                
-                print("Failed to fetch cat breeds from remote: \(error.localizedDescription)")
-                return self.offlineService.fetch([CatBreed].self)
+            .catch { [weak self] remoteError in
+                return self?.offlineService.fetch([CatBreed].self)
+                ?? Fail(error: ServiceError.noDataAvailable).eraseToAnyPublisher()
             }
             .eraseToAnyPublisher()
     }

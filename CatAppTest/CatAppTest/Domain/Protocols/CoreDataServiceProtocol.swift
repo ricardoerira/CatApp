@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol APIServiceOfflineProtocol {
-    func fetch<T: Decodable>(_ type: T.Type) -> AnyPublisher<T, Error>
+protocol CoreDataServiceProtocol {
+    func fetch<T: Decodable>(_ type: T.Type) -> AnyPublisher<T, ServiceError>
     func save<T: Decodable>(item: [T])
 }
