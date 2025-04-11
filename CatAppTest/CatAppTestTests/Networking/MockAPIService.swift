@@ -2,7 +2,7 @@
 //  MockAPIService.swift
 //  CatAppTestTests
 //
-//  Created by andres on 4/04/25.
+//  Created by Wilson Ricardo Erira  on 4/04/25.
 //
 import Foundation
 import Combine
@@ -15,10 +15,14 @@ class MockAPIService: APIServiceProtocol {
         self.result = result
     }
 
-    func fetch<T>(_ type: T.Type, from endpoint: String) -> AnyPublisher<T, Error> where T : Decodable {
+    func fetch<T: Decodable>(_ type: T.Type, from endpoint: String) -> AnyPublisher<T, Error> {
         switch result {
         case .success(let breeds):
-            return Just(breeds as! T)
+            guard let value = breeds as? T else {
+                return Fail(error: APIError.invalidResponse)
+                    .eraseToAnyPublisher()
+            }
+            return Just(value)
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
         case .failure(let error):

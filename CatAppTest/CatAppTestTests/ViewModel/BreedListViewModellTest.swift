@@ -2,87 +2,115 @@
 //  BreedListViewModellTest.swift
 //  CatAppTestTests
 //
-//  Created by andres on 4/04/25.
+//  Created by Wilson Ricardo Erira  on 4/04/25.
 //
-
 import XCTest
 import Combine
 @testable import CatAppTest
 
-final class BreedListViewModelTests: XCTestCase {
-    private var cancellables: Set<AnyCancellable> = []
+final class CatBreedListViewModelTests: XCTestCase {
+    var viewModel: CatBreedListViewModel!
+    var mockUseCase: MockFetchCatBreedsUseCase!
+    var cancellables: Set<AnyCancellable>!
+    let breeds = CatBreed.preview()
 
-    func test_fetchBreeds_success_setsLoadedState() {
-        let expectedBreeds = CatBreed.preview()
-        let mockService = MockAPIService(result: .success(expectedBreeds))
-        let viewModel = BreedListViewModel(service: mockService)
 
-        let expectation = XCTestExpectation(description: "Should load successfully")
-
-        viewModel.$state
-            .dropFirst() // skip initial .idle
-            .sink { state in
-                if case .loaded(let breeds) = state {
-                    // Then
-                    XCTAssertEqual(breeds.count, expectedBreeds.count)
-                    XCTAssertEqual(breeds.first?.name, expectedBreeds.first?.name)
-                    expectation.fulfill()
-                }
-            }
-            .store(in: &cancellables)
-
-        wait(for: [expectation], timeout: 2)
+    override func setUp() {
+        super.setUp()
+        mockUseCase = MockFetchCatBreedsUseCase()
+        viewModel = CatBreedListViewModel(fetchCatBreedsUseCase: mockUseCase)
+        cancellables = []
     }
 
-    func test_fetchBreeds_failure_setsFailedState() {
-        let error = URLError(.notConnectedToInternet)
-        let mockService = MockAPIService(result: .failure(error))
-        let viewModel = BreedListViewModel(service: mockService)
-
-        let expectation = XCTestExpectation(description: "Should fail with error")
-
-        viewModel.$state
-            .dropFirst()
-            .sink { state in
-                if case .failed(let err) = state {
-                    XCTAssertEqual((err as? URLError)?.code, error.code)
-                    expectation.fulfill()
-                }
-            }
-            .store(in: &cancellables)
-
-        wait(for: [expectation], timeout: 2)
+    override func tearDown() {
+        viewModel = nil
+        mockUseCase = nil
+        cancellables = nil
+        super.tearDown()
     }
 
-    
-    func test_filters_withSearchText_filtersCorrectly() {
-        let expectation = XCTestExpectation(description: "Debounced search works")
-        let breeds = CatBreed.preview()
+    func testFetchBreeds_SuccessfulResponse() {
+        let expectedBreeds = breeds
+        mockUseCase.result = .success(expectedBreeds)
+        viewModel.fetchBreeds()
 
-        let mockService = MockAPIService(result: .success(breeds))
-        let viewModel = BreedListViewModel(service: mockService)
-        viewModel.setupSearch()
-        viewModel.searchText = "Beng"
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            XCTAssertEqual(viewModel.filteredBreeds.count, 1)
-            XCTAssertEqual(viewModel.filteredBreeds.first?.name, "Bengal")
+        // Then
+        let expectation = self.expectation(description: "Wait for fetch")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            XCTAssertEqual(self.viewModel.breeds.count, expectedBreeds.count)
+            XCTAssertEqual(self.viewModel.filteredBreeds.count, expectedBreeds.count)
+            if case .loaded(let breeds) = self.viewModel.state {
+                XCTAssertEqual(breeds.count, expectedBreeds.count)
+            } else {
+                XCTFail("Expected loaded state")
+            }
             expectation.fulfill()
         }
 
         wait(for: [expectation], timeout: 1.0)
     }
+
+    func testFetchBreeds_FailureResponse() {
+        let expectedError = URLError(.notConnectedToInternet)
+        mockUseCase.result = .failure(expectedError)
+        viewModel.fetchBreeds()
+        let expectation = self.expectation(description: "Wait for error state")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            if case .failed(let error) = self.viewModel.state {
+                XCTAssertEqual((error as? URLError)?.code, .notConnectedToInternet)
+            } else {
+                XCTFail("Expected failed state")
+            }
+            XCTAssertEqual(self.viewModel.errorMessage, expectedError.localizedDescription)
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func testSearchFiltersBreeds() {
+        // Given
+        mockUseCase.result = .success(breeds)
+        viewModel.fetchBreeds()
+
+        let expectation = self.expectation(description: "Wait for search")
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.viewModel.searchText = "ben"
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            XCTAssertEqual(self.viewModel.filteredBreeds.count, 1)
+            XCTAssertEqual(self.viewModel.filteredBreeds.first?.name, "Bengal")
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 5.0)
+    }
     
-    func test_filterBreeds_filtersCorrectly() {
+    func testSearchFiltersBreeds_NoMatch() {
+        // Given
         let breeds = CatBreed.preview()
 
-        let mockService = MockAPIService(result: .success(breeds))
-        let viewModel = BreedListViewModel(service: mockService)
-        viewModel.state = .loaded(breeds.map(CatBreedMapper.map))
+        mockUseCase.result = .success(breeds)
 
-        viewModel.filterBreeds(with: "Aby")
+        // When
+        viewModel.fetchBreeds()
 
-        XCTAssertEqual(viewModel.filteredBreeds.count, 1)
-        XCTAssertEqual(viewModel.filteredBreeds.first?.name, "Abyssinian")
+        let expectation = self.expectation(description: "Search yields no results")
+
+        // Simulate search with a term that doesn't match
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.viewModel.searchText = "test"
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            // Then
+            XCTAssertTrue(self.viewModel.filteredBreeds.isEmpty, "Expected no breeds to match search")
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 5.0)
     }
+
 }

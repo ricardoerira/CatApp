@@ -2,7 +2,7 @@
 //  BreedListViewModel.swift
 //  CatAppTest
 //
-//  Created by andres on 4/04/25.
+//  Created by Wilson Ricardo Erira  on 4/04/25.
 //
 import Foundation
 import Combine
@@ -14,7 +14,7 @@ enum Loadable<T> {
     case failed(Error)
 }
 
-final class CatBreedListViewModel: ObservableObject {
+class CatBreedListViewModel: ObservableObject {
     @Published var state: Loadable<[CatBreedModel]> = .idle
     @Published var breeds: [CatBreedModel] = []
     @Published var isLoading: Bool = false
@@ -23,9 +23,9 @@ final class CatBreedListViewModel: ObservableObject {
     @Published var filteredBreeds: [CatBreedModel] = []
 
     var cancellables: Set<AnyCancellable> = []
-    let fetchCatBreedsUseCase: FetchCatBreedsUseCase
+    let fetchCatBreedsUseCase: FetchCatBreedsUseCaseProtocol
     
-    init(fetchCatBreedsUseCase: FetchCatBreedsUseCase) {
+    init(fetchCatBreedsUseCase: FetchCatBreedsUseCaseProtocol) {
         self.fetchCatBreedsUseCase = fetchCatBreedsUseCase
         fetchBreeds()
         setupSearch()
@@ -47,8 +47,8 @@ final class CatBreedListViewModel: ObservableObject {
                 }
             }, receiveValue: { [weak self] breeds in
                 self?.breeds = breeds.map(CatBreedMapper.map)
-                self?.state = .loaded(self?.breeds ?? [])
                 self?.filteredBreeds = self?.breeds ?? []
+                self?.state = .loaded(self?.filteredBreeds ?? [])
             })
             .store(in: &cancellables)
     }
