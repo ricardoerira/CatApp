@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  CatAppTest
+
+ Created by Wilson Ricardo Erira Correa on 11/04/25.
+
+*/
+/* APIError */
+
+"error_bad_request" = "Solicitud incorrecta (400).";
+"error_unauthorized" = "No autorizado. Verifica tu clave de API.";
+"error_forbidden" = "Acceso prohibido.";
+"error_not_found" = "Recurso no encontrado.";
+"error_server" = "Error del servidor (%d).";
+"error_unknown" = "Error inesperado (%d).";
+"error_invalid_response" = "Respuesta inválida del servidor.";
+
+/* ServiceError */
+"error_unsupported_type" = "El tipo solicitado no es compatible.";
+"error_cast_failed" = "Error al convertir los datos al tipo esperado.";
+"error_core_data" = "Error de Core Data: %@";
+"error_no_data" = "No hay datos disponibles localmente. Conéctate a internet para obtener datos.";
+
+/* View */
+"loading_breeds" = "Cargando razas...";
+"oops" = "¡Ups!";
+"retry" = "Reintentar";
+"generic_error" = "Algo salió mal.";
+"search_placeholder" = "Buscar razas...";
+"description_label" = "Descripción";
+"more_button" = "Más...";
+"intelligence_label" = "🧠 Inteligencia: %d";
+"adaptability_label" = "❤️ Adaptabilidad: %d";
